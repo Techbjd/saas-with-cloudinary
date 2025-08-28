@@ -1,7 +1,8 @@
 declare module "daisyui" {
   import type { PluginCreator } from "tailwindcss/types/config";
 
-  interface DaisyUIOptions {
+  interface DaisyUIOptions 
+  {
     themes?: string[] | boolean;
     styled?: boolean;
     base?: boolean;

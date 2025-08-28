@@ -17,7 +17,7 @@ model Video{
   id               String @id @default(cuid())
   title            String
   description      String?
-  publicId         String
+  publicId         String   @unique
   originalSize     String
   compressedSize   String
   duration         Float

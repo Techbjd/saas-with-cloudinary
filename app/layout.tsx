@@ -2,16 +2,21 @@
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ClerkProvider } from "@clerk/nextjs";
-import AppLayout from "@/app/components/ui/AppLayout" // adjust path if AppLayout is in a subfolder
+import AppLayout from "@/app/components/ui/AppLayout"; // adjust path if needed
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <ClerkProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider
+            attribute="data-theme"
+            defaultTheme="light"
+            themes={["light", "dark", "dracula", "ocean", "forest"]}
+            enableSystem={false}
+          >
             <AppLayout>
-              {children} {/* Now every page gets the sidebar & navbar */}
+              {children} {/* Every page gets sidebar & navbar */}
             </AppLayout>
           </ThemeProvider>
         </ClerkProvider>
