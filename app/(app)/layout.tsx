@@ -40,7 +40,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => setMounted(true), []);
 
   const currentTheme = theme === "system" ? systemTheme : theme;
- const themeModes = ['light', 'dark', 'dracula', 'ocean', 'forest', 'system'] as const;
+//  const themeModes = ['light', 'dark', 'dracula', 'ocean', 'forest', 'system'] as const;
   // Handle sidebar on resize
   useEffect(() => {
     const handleResize = () => {
